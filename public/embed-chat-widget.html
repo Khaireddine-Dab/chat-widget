@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Widget - Embed Code</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      padding: 40px;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      color: #666;
+      margin-bottom: 30px;
+    }
+    .code-block {
+      background: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+      overflow-x: auto;
+    }
+    pre {
+      margin: 0;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+    .copy-btn {
+      background: #8b5cf6;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    .copy-btn:hover {
+      background: #7c3aed;
+    }
+    .section {
+      margin: 40px 0;
+    }
+    .config-option {
+      background: #f9fafb;
+      padding: 15px;
+      margin: 10px 0;
+      border-left: 3px solid #8b5cf6;
+      border-radius: 4px;
+    }
+    .config-option strong {
+      color: #8b5cf6;
+    }
+  </style>
+</head>
+<body>
+  <h1>🚀 Chat Widget Embed Code</h1>
+  <p class="subtitle">Copy and paste this code into any website to add the chat widget</p>
+
+  <div class="section">
+    <h2>📋 Step 1: Copy this code</h2>
+    <p>Add this code before the closing <code>&lt;/body&gt;</code> tag of your website:</p>
+    
+    <div class="code-block">
+      <pre>&lt;!-- Chat Widget --&gt;
+&lt;div id="chat-widget-root"&gt;&lt;/div&gt;
+&lt;script&gt;
+  window.chatWidgetConfig = {
+    brandName: "Your Business",
+    brandColor: "#8b5cf6",
+    brandLogo: "/logo.png",
+    welcomeMessage: "Hi! How can we help you today?",
+    position: "bottom-right",
+    businessPhone: "+1234567890",
+    language: "en",
+    quickReplies: [
+      "I have a question",
+      "I need support",
+      "Book a reservation"
+    ],
+    enableBooking: true,
+    enableEscalation: true,
+    enableOfflineMode: true,
+    businessHours: {
+      monday: "9:00 AM - 6:00 PM",
+      tuesday: "9:00 AM - 6:00 PM",
+      wednesday: "9:00 AM - 6:00 PM",
+      thursday: "9:00 AM - 6:00 PM",
+      friday: "9:00 AM - 6:00 PM",
+      saturday: "10:00 AM - 4:00 PM",
+      sunday: "Closed"
+    }
+  };
+&lt;/script&gt;
+&lt;script src="https://your-domain.com/chat-widget.js"&gt;&lt;/script&gt;</pre>
+      <button class="copy-btn" onclick="copyCode()">Copy Code</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>⚙️ Step 2: Customize the configuration</h2>
+    <p>Edit the <code>window.chatWidgetConfig</code> object to customize your widget:</p>
+    
+    <div class="config-option">
+      <strong>brandName</strong> - Your business name (e.g., "Acme Corp")
+    </div>
+    <div class="config-option">
+      <strong>brandColor</strong> - Primary color in hex format (e.g., "#8b5cf6")
+    </div>
+    <div class="config-option">
+      <strong>brandLogo</strong> - URL to your logo image
+    </div>
+    <div class="config-option">
+      <strong>welcomeMessage</strong> - First message users see
+    </div>
+    <div class="config-option">
+      <strong>position</strong> - "bottom-right" or "bottom-left"
+    </div>
+    <div class="config-option">
+      <strong>businessPhone</strong> - Your phone number for call feature
+    </div>
+    <div class="config-option">
+      <strong>language</strong> - "en", "es", "fr", or "de"
+    </div>
+    <div class="config-option">
+      <strong>quickReplies</strong> - Array of quick reply button texts
+    </div>
+    <div class="config-option">
+      <strong>enableBooking</strong> - true/false to enable reservation form
+    </div>
+    <div class="config-option">
+      <strong>enableEscalation</strong> - true/false to enable human agent escalation
+    </div>
+    <div class="config-option">
+      <strong>enableOfflineMode</strong> - true/false to show offline message
+    </div>
+    <div class="config-option">
+      <strong>businessHours</strong> - Object with hours for each day
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🔗 Step 3: Host the widget file</h2>
+    <p>You need to host the <code>chat-widget.js</code> file on your server and update the script src URL in the embed code above.</p>
+    <p>The widget file is available in your Next.js project at <code>/public/chat-widget.js</code></p>
+  </div>
+
+  <script>
+    function copyCode() {
+      const code = document.querySelector('.code-block pre').textContent;
+      navigator.clipboard.writeText(code).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.textContent = '✓ Copied!';
+        setTimeout(() => {
+          btn.textContent = 'Copy Code';
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
